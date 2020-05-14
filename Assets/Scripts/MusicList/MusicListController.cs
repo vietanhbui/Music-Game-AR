@@ -28,7 +28,6 @@ public class MusicListController : MonoBehaviour
     {
         for (int i = 0; i < clips.Count; i++)
         {
-            Debug.Log(clips.ElementAt(i).name);
             itemGO.transform.GetChild(0).gameObject.GetComponent<Text>().text = clips.ElementAt(i).name;
             GameObject item = Instantiate(itemGO, listGO.transform);
             item.transform.localScale = new Vector3(1, 1, 1);

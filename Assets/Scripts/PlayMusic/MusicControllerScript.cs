@@ -18,7 +18,7 @@ public class MusicControllerScript : MonoBehaviour
 
     public AudioClip tinhSau;
     public AudioClip smooth;
-    public static List<AudioClip> clips;
+    public List<AudioClip> clips;
 
     // Use this for initialization
     void Awake()
@@ -82,6 +82,7 @@ public class MusicControllerScript : MonoBehaviour
         AudioClip nextClip = clips.ElementAt(index);
         music.clip = nextClip;
         isPlay = true;
+        GameObject.FindWithTag("MusicTitle").GetComponent<Text>().text = nextClip.name;
         this.ChangeImageSource();
         this.HandlePlayMusic();
     }
@@ -102,11 +103,12 @@ public class MusicControllerScript : MonoBehaviour
         AudioClip nextClip = clips.ElementAt(index);
         music.clip = nextClip;
         isPlay = true;
+        GameObject.FindWithTag("MusicTitle").GetComponent<Text>().text = nextClip.name;
         this.ChangeImageSource();
         this.HandlePlayMusic();
     }
 
-    private void ChangeImageSource()
+    public void ChangeImageSource()
     {
         Button playPauseButton = playPauseObject.GetComponent<Button>();
         if (isPlay)
@@ -119,7 +121,7 @@ public class MusicControllerScript : MonoBehaviour
         }
     }
 
-    private void HandlePlayMusic()
+    public void HandlePlayMusic()
     {
         AudioSource drumMusic = drumObject.GetComponent<AudioSource>();
         Renderer drumRenderer = drumObject.GetComponent<Renderer>();

@@ -7,6 +7,7 @@ TagManager:
   - PlayPauseButton
   - Drum
   - Music
+  - MusicTitle
   layers:
   - Default
   - TransparentFX
