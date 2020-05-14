@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c00e6269b44848842903a6330ff6b9c9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - itemGO: {instanceID: 0}
+  - listGO: {instanceID: 0}
+  - scroll: {instanceID: 0}
+  - tinhSau: {fileID: 8300000, guid: 5e424c0e6423c1d49834ccd6f1bf5e42, type: 3}
+  - smooth: {fileID: 8300000, guid: 51dcbd44d6783bb4c802e6354f9bba3c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

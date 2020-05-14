@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Button))]
 public class MusicControllerScript : MonoBehaviour
@@ -17,11 +18,12 @@ public class MusicControllerScript : MonoBehaviour
 
     public AudioClip tinhSau;
     public AudioClip smooth;
-    public List<AudioClip> clips;
+    public static List<AudioClip> clips;
 
     // Use this for initialization
     void Awake()
     {
+        clips = new List<AudioClip>();
         clips.Add(tinhSau);
         clips.Add(smooth);
         if (drumObject == null) { 
@@ -45,6 +47,16 @@ public class MusicControllerScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    public void GoToMusicList()
+    {
+        SceneManager.LoadScene("MusicListScene");
     }
 
     public void OnClickPlayButton()
