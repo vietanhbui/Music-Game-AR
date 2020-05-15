@@ -13,7 +13,7 @@ public class MusicListController : MonoBehaviour
 
     public AudioClip tinhSau;
     public AudioClip smooth;
-    public static List<AudioClip> clips;
+    public List<AudioClip> clips;
 
     // Use this for initialization
     void Awake()
