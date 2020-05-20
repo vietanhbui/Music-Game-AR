@@ -113,11 +113,11 @@ public class MusicControllerScript : MonoBehaviour
         Button playPauseButton = playPauseObject.GetComponent<Button>();
         if (isPlay)
         {
-            playPauseButton.image.overrideSprite = playImage;
+            playPauseButton.image.overrideSprite = pauseImage;
         }
         else
         {
-            playPauseButton.image.overrideSprite = pauseImage;
+            playPauseButton.image.overrideSprite = playImage;
         }
     }
 
