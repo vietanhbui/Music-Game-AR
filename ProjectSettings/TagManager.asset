@@ -8,6 +8,7 @@ TagManager:
   - Drum
   - Music
   - MusicTitle
+  - Guitar
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 [RequireComponent(typeof(Button))]
 public class MusicControllerScript : MonoBehaviour
@@ -13,9 +14,15 @@ public class MusicControllerScript : MonoBehaviour
     public Sprite pauseImage;
 
     public GameObject drumObject;
+    public GameObject guitarObject;
     public GameObject musicObject;
     public GameObject playPauseObject;
 
+    public AudioClip allDayAndNight;
+    public AudioClip feelings;
+    public AudioClip kream;
+    public AudioClip guysMyAge;
+    public AudioClip giant;
     public AudioClip tinhSau;
     public AudioClip smooth;
     public List<AudioClip> clips;
@@ -24,6 +31,11 @@ public class MusicControllerScript : MonoBehaviour
     void Awake()
     {
         clips = new List<AudioClip>();
+        clips.Add(allDayAndNight);
+        clips.Add(feelings);
+        clips.Add(kream);
+        clips.Add(guysMyAge);
+        clips.Add(giant);
         clips.Add(tinhSau);
         clips.Add(smooth);
         if (drumObject == null) { 
@@ -34,6 +46,10 @@ public class MusicControllerScript : MonoBehaviour
         }
         if (playPauseObject == null) { 
             playPauseObject = GameObject.FindWithTag("PlayPauseButton");
+        }
+        if (guitarObject == null)
+        {
+            guitarObject = GameObject.FindWithTag("Guitar");
         }
     }
 
@@ -110,24 +126,26 @@ public class MusicControllerScript : MonoBehaviour
 
     public void ChangeImageSource()
     {
-        Button playPauseButton = playPauseObject.GetComponent<Button>();
+        Image playPauseImage = playPauseObject.GetComponent<Image>();
         if (isPlay)
         {
-            playPauseButton.image.overrideSprite = pauseImage;
+            playPauseImage.sprite = pauseImage;
         }
         else
         {
-            playPauseButton.image.overrideSprite = playImage;
+            playPauseImage.sprite = playImage;
         }
     }
 
     public void HandlePlayMusic()
     {
         AudioSource drumMusic = drumObject.GetComponent<AudioSource>();
-        Renderer drumRenderer = drumObject.GetComponent<Renderer>();
+        TargetScript drumScript = drumObject.GetComponent<TargetScript>();
         AudioSource music = musicObject.GetComponent<AudioSource>();
-        Renderer musicRenderer = musicObject.GetComponent<Renderer>();
-        if (isPlay && drumRenderer.isVisible)
+        TargetScript musicScript = musicObject.GetComponent<TargetScript>();
+        AudioSource guitarMusic = guitarObject.GetComponent<AudioSource>();
+        TargetScript guitarScript = guitarObject.GetComponent<TargetScript>();
+        if (isPlay && drumScript.targetFound)
         {
             drumMusic.Play(0);
         }
@@ -135,13 +153,21 @@ public class MusicControllerScript : MonoBehaviour
         {
             drumMusic.Pause();
         }
-        if (isPlay && musicRenderer.isVisible)
+        if (isPlay && musicScript.targetFound)
         {
             music.Play(0);
         }
         else
         {
             music.Pause();
+        }
+        if (isPlay && guitarScript.targetFound)
+        {
+            guitarMusic.Play(0);
+        }
+        else
+        {
+            guitarMusic.Pause();
         }
     }
 }

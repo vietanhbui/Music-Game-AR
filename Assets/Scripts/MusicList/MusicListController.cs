@@ -11,6 +11,11 @@ public class MusicListController : MonoBehaviour
     public GameObject listGO;
     public ScrollRect scroll;
 
+    public AudioClip allDayAndNight;
+    public AudioClip feelings;
+    public AudioClip kream;
+    public AudioClip guysMyAge;
+    public AudioClip giant;
     public AudioClip tinhSau;
     public AudioClip smooth;
     public List<AudioClip> clips;
@@ -19,6 +24,11 @@ public class MusicListController : MonoBehaviour
     void Awake()
     {
         clips = new List<AudioClip>();
+        clips.Add(allDayAndNight);
+        clips.Add(feelings);
+        clips.Add(kream);
+        clips.Add(guysMyAge);
+        clips.Add(giant);
         clips.Add(tinhSau);
         clips.Add(smooth);
     }

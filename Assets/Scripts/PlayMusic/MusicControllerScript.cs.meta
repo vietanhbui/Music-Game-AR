@@ -6,9 +6,16 @@ MonoImporter:
   defaultReferences:
   - playImage: {fileID: 21300000, guid: b000592732f1be6488bbc3d8f7a7a635, type: 3}
   - pauseImage: {fileID: 21300000, guid: 1da7c9c72fc037c42bdbd18210a021f5, type: 3}
-  - drumObject: {instanceID: 0}
+  - drumObject: {fileID: -927199367670048503, guid: 7a5e86b6e03aa0c4fbca0b35fb823169,
+      type: 3}
+  - guitarObject: {instanceID: 0}
   - musicObject: {instanceID: 0}
   - playPauseObject: {instanceID: 0}
+  - allDayAndNight: {fileID: 8300000, guid: 90fc5fc927a2ed4468500c539e8e570a, type: 3}
+  - feelings: {fileID: 8300000, guid: 13a07c60f8d7d0948811fb9c5e7a3c76, type: 3}
+  - kream: {fileID: 8300000, guid: aca36207d9afc664dba8abd671ccbb35, type: 3}
+  - guysMyAge: {fileID: 8300000, guid: 90fc5fc927a2ed4468500c539e8e570a, type: 3}
+  - giant: {fileID: 8300000, guid: cf0618a3eb965bb4096c23394f92a13c, type: 3}
   - tinhSau: {fileID: 8300000, guid: 5e424c0e6423c1d49834ccd6f1bf5e42, type: 3}
   - smooth: {fileID: 8300000, guid: 51dcbd44d6783bb4c802e6354f9bba3c, type: 3}
   executionOrder: 0
