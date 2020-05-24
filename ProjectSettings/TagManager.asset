@@ -9,6 +9,7 @@ TagManager:
   - Music
   - MusicTitle
   - Guitar
+  - Loading
   layers:
   - Default
   - TransparentFX
